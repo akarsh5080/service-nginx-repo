@@ -22,7 +22,7 @@ jobs:
       run: echo "${{ secrets.GHCR_TOKEN }}" | docker login ghcr.io -u akarsh5080 --password-stdin
 
     - name: Build Docker image
-      run: docker build -t ghcr.io/akarsh5080/app-repo:${{ github.sha }} .
+      run: docker build -t ghcr.io/akarsh5080/service-nginx-repo:${{ github.sha }} .
 
     - name: Push Image
       run: docker push ghcr.io/akarsh5080/service-nginx-repo:${{ github.sha }}
